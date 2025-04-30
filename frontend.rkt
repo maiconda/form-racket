@@ -53,7 +53,7 @@
                ,content))
      (footer ((class "footer py-3 bg-light"))
              (div ((class "container text-center"))
-                  (span ((class "text-muted")) "Ferramenta de Avaliação de Usabilidade do DrRacket"))))))
+                  (span ((class "text-muted")) "Ferramenta de Avaliação de Usabilidade"))))))
 
 (define (chart-page request)
   (let ([stats (get-data)])
@@ -62,7 +62,7 @@
       "Resultados"
       `(div
         (h1 ((class "display-4 mb-4")) "Resultados da Avaliação de Usabilidade")
-        (p ((class "lead mb-4")) "Bem-vindo à ferramenta de Avaliação de Usabilidade do DrRacket. Esta aplicação permite aos usuários avaliar o software DrRacket com base nas 10 heurísticas de usabilidade de Nielsen.")
+        (p ((class "lead mb-4")) "Bem-vindo à ferramenta de Avaliação de Usabilidade. Esta aplicação permite aos usuários avaliar softwares com base nas 10 heurísticas de usabilidade de Nielsen.")
         
         (div ((class "row"))
              (div ((class "col-md-8"))
@@ -86,7 +86,7 @@
                                                 (number->string (/ (round (* avg 10)) 10))))))))))
         
         (div ((class "d-grid gap-2 col-6 mx-auto mt-4"))
-             (a ((href "/form") (class "btn btn-primary btn-lg")) "Avaliar DrRacket"))
+             (a ((href "/form") (class "btn btn-primary btn-lg")) "Avaliar"))
         
         (script
          ,(format "~a" 
@@ -141,10 +141,10 @@
   (let ([stats (get-data)])
     (response/xexpr
      (page-template
-      "Avaliação de Usabilidade do DrRacket - Início"
+      "Avaliação de Usabilidade - Início"
       `(div ((class "text-center"))
-            (h1 ((class "display-4 mb-4")) "Avaliação de Usabilidade do DrRacket")
-            (p ((class "lead mb-4")) "Bem-vindo à ferramenta de Avaliação de Usabilidade do DrRacket. Esta aplicação permite aos usuários avaliar o software DrRacket com base nas 10 heurísticas de usabilidade de Nielsen.")
+            (h1 ((class "display-4 mb-4")) "Avaliação de Usabilidade")
+            (p ((class "lead mb-4")) "Bem-vindo à ferramenta de Avaliação de Usabilidade Esta aplicação permite aos usuários avaliar softwares com base nas 10 heurísticas de usabilidade de Nielsen.")
             
             (div ((class "card shadow-sm mb-5"))
                  (div ((class "card-body"))
@@ -160,7 +160,7 @@
             (div ((class "row mt-4"))
                  (div ((class "col-md-6"))
                       (div ((class "d-grid"))
-                           (a ((href "/form") (class "btn btn-primary btn-lg mb-3")) "Avaliar DrRacket")))
+                           (a ((href "/form") (class "btn btn-primary btn-lg mb-3")) "Avaliar")))
                  (div ((class "col-md-6"))
                       (div ((class "d-grid"))
                            (a ((href "/chart") (class "btn btn-outline-primary btn-lg mb-3")) "Ver Resultados")))))))))
@@ -168,10 +168,10 @@
 (define (form-page request)
   (response/xexpr
    (page-template
-    "Avaliar DrRacket - Avaliação de Usabilidade"
+    "Avaliar - Avaliação de Usabilidade"
     `(div
-      (h1 ((class "display-4 mb-4")) "Avaliar DrRacket")
-      (p ((class "lead mb-4")) "Por favor, avalie o DrRacket com base nas 10 heurísticas de usabilidade de Nielsen. Use os controles deslizantes para selecionar sua nota (1-10).")
+      (h1 ((class "display-4 mb-4")) "Avaliar")
+      (p ((class "lead mb-4")) "Por favor, avalie com base nas 10 heurísticas de usabilidade de Nielsen. Use os controles deslizantes para selecionar sua nota (1-10).")
       
       (form ((action "/submit") (method "post") (id "evaluation-form"))
             
