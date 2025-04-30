@@ -1,10 +1,10 @@
-# Ferramenta de Avaliação de Usabilidad
+# Ferramenta de Avaliação de Usabilidade
 
 Esta aplicação web permite aos usuários avaliar a usabilidade de algum software (drRacket) com base nas 10 heurísticas de usabilidade de Nielsen. A aplicação coleta as avaliações dos usuários e exibe estatísticas agregadas e visualizações dos resultados da avaliação.
 
 ## Funcionalidades
 
-- **Formulário de Avaliação**: Os usuários podem avaliar o DrRacket em uma escala de 1 a 10 para cada uma das 10 heurísticas de usabilidade de Nielsen
+- **Formulário de Avaliação**: Os usuários podem avaliar a usabilidade de software em uma escala de 1 a 10 para cada uma das 10 heurísticas de usabilidade de Nielsen
 - **Visualização de Resultados**: Gráfico interativo que exibe dados agregados de avaliação
 - **Painel de Estatísticas**: Mostra o número total de avaliações e a classificação média geral
 
@@ -22,7 +22,7 @@ Para executar esta aplicação, você precisará de:
 1. Clone este repositório ou baixe o código-fonte:
 
 ```bash
-git clone https://github.com/maiconda/form-racket
+git clone https://github.com/maiconda/usabilidade-nielsen-racket
 ```
 
 2. Instale os pacotes necessários:
@@ -45,7 +45,7 @@ A aplicação consiste nos seguintes arquivos:
 1. Entre na raíz do projeto:
 
 ```bash
-cd racket-form
+cd usabilidade-nielsen-racket
 ```
 
 2. Execute o programa principal:
