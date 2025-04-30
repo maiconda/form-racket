@@ -3,15 +3,14 @@
 (require db)
 
 (provide init-database
-         save-evaluation
-         get-evaluation-stats
+         save
+         get-data
          close-database)
 
 (define db-conn #f)
 
 (define (init-database)
   (define db-path (build-path (current-directory) "data.db"))
-  (displayln (format "Criando banco de dados em: ~a" db-path))
   (set! db-conn (sqlite3-connect #:database (path->string db-path)))
 
   (query-exec db-conn
@@ -29,7 +28,7 @@
                  ajuda_documentacao INTEGER
                )"))
 
-(define (save-evaluation dados-avaliacao)
+(define (save dados-avaliacao)
   (query-exec db-conn
               "INSERT INTO avaliacoes 
                (visibilidade, compatibilidade, controle, consistencia, 
@@ -47,7 +46,7 @@
               (hash-ref dados-avaliacao 'recuperacao_erros)
               (hash-ref dados-avaliacao 'ajuda_documentacao)))
 
-(define (get-evaluation-stats)
+(define (get-data)
   (define total-avaliacoes
     (query-value db-conn "SELECT COUNT(*) FROM avaliacoes"))
 
